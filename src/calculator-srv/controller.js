@@ -1,8 +1,9 @@
 const { Calculator } = require('./Calculator');
 
 exports.makeCalculation = (req, res, next) => {
-    const calculator = new Calculator();
     let { expression } = req.query;
+    if (!expression) return res.status(400).json({ error: 'Please add an "expression" query parameter'});
+    const calculator = new Calculator();
     try {
         const result = calculator.calculateResult(expression);
         expression = calculator.currentCalculation;

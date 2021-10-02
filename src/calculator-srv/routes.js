@@ -4,7 +4,9 @@ const { makeCalculation } = require('./controller');
 const router = Router();
 
 
-router.get('/', makeCalculation);
+router
+    .route('/')
+    .get(makeCalculation);
 
 
 exports.calculatorRouter = router;

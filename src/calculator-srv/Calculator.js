@@ -4,7 +4,7 @@ class Calculator{
     }
     addItem(value) {
         const nonNumbers = ['+', '-', '/', '*', '(', ')'];
-        // The '+' sign is being converted as a space when sent in the query parameter. So, this is a check to solve that coverts space into  a plus sign.
+        // The '+' sign is being converted as a space when sent in the query parameter. So, this is a check to solve it by converting space into a plus sign.
         if (value === ' ') value = '+';
         const currentCalculationLength = this.currentCalculation.length;
         const valueToAdd = nonNumbers.includes(value) || nonNumbers.includes(this.currentCalculation[currentCalculationLength - 1]) ? ' ' + value : value;
